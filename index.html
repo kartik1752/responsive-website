@@ -3,26 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Loading Page Example</title>
     <style>
-        *{margin:0px ;padding:0px ;font-family: sans-serif;}
-        body{background-image: url(background2.png);height: 100vh;width: auto;background-size: cover;background-position: center;
-        background-repeat: no-repeat;background-attachment: fixed;display: flex;justify-content: center;align-items: center;flex-direction: column;}
-        h1{color:purple;font-weight: 700;font-size:clamp(6vw,7.5vw,9vw);}
-        h1{color: transparent;  -webkit-text-stroke: 1px orange;
-            background-image: url(back.png);-webkit-background-clip: text;
-        background-position: 0 0;
-        animation: back 5s linear infinite;}
-        @keyframes back{
-            100%{background-position: 200px 0px;}
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
-        p{color: yellow;text-align: center;font-size:clamp(1.5vw,2vw,2.5vw)}
 
+        .loading-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .loading-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content {
+            display: none;
+            /* Add your regular content styles here */
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        .f1{
+            height:28px ;
+            width: 28px;
+            margin-left: 2px;
+        }
+        .one{
+            
+            height:36px ;
+            width: 240px;
+            border-radius:20px;
+            background-color: #3b5998;
+            color: white;
+            font-family:sans-serif;
+            margin-bottom: 16px;
+            font-weight: 520;
+        
+
+        }
+        .inner{
+            padding: 3px;
+            display: flex;
+            cursor: pointer;
+           
+           
+        }
+        
+        .ik{
+           padding: 4px;
+           margin-left: 7px;
+          
+
+        }
+        .two{
+            background-color: white;
+            height:36px ;
+            width: 240px;
+            border-radius:20px;
+            font-family:sans-serif;
+            box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.12), 0 0 2px 0 rgba(0,0,0,0.27) inset;
+            margin-bottom: 16px;
+        }
+        .three{
+            background-color: black;
+            color: white;
+            height:36px ;
+            width: 240px;
+            border-radius:20px;
+            font-family:sans-serif;
+            margin-bottom:16px ;
+          
+            
+        }
+        .four{
+            background-color:#3A9691;
+            color: white;
+            height:36px ;
+            width: 240px;
+            border-radius:20px;
+            font-family:sans-serif;
+            box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.12), 0 0 2px 0 rgba(0,0,0,0.27) inset;
+            margin-bottom: 16px;
+
+        }
+        
+        .heading{
+            margin-top: 20px;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: center;
+           
+            
+        }
+        .pk{
+            color: #242424;
+            font: 21px europa-lightregular,sans-serif;
+        }
+        .paragraph{
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .buttonn{
+            display: flex;
+            justify-content: center;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .yummly{
+            width:120px ;
+            height: 45px;
+        }
+        .p1{
+            color: #707070;
+            font: 14px europa-lightregular,sans-serif;
+        }
+        .already{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+
+
+        }
+        .lk{
+            color: #3A9691;
+            font: 13px europa-lightregular,sans-serif;
+        }
+        
+        
+      
+        .ik a{
+            text-decoration: none;
+            color: black;
+        }
+        .mai{
+            display:grid;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .pass{
+          
+            
+            display:grid;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .email{
+            width: 300px;
+            height: 40px;
+            font-size: 15px;
+            background-color: #f2f2f2;
+            border-color: lightgray;
+            padding-left:15px;
+            border: none;
+            font-family: "Nunito",sans-serif;
+            font-weight: bold;
+        }
+        .password{
+            width: 300px;
+            height: 40px;
+            border-color: lightgray;
+            font-size: 15px;
+            background-color: #f2f2f2;
+            padding-left: 15px;
+            border: none;
+            font-family: "Nunito",sans-serif;
+            font-weight: bold;
+        }
+        .label1{
+            font-family: "Nunito",sans-serif;
+            font-weight: bold;
+        }
+        .checkbox{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-family: "Nunito",sans-serif;
+            font-weight: bold;
+            margin-left: -180px;
+        }
+        .check{
+            position:relative;
+            bottom:0px ;
+            left:4px;
+            display:flex;
+            flex-direction:column;
+            align-items:left;
+        }
+        .submit{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .signup{
+            background-color:#f5ce35;
+            border:none;
+            height:40px;
+            width: 260px;
+            border-radius:5px;
+            font-size:17px;
+            cursor:pointer;
+        }
+        .signup a{
+            text-decoration: none;
+            color: black;
+            font-family: "Nunito",sans-serif;
+            font-weight: bold;
+        }
+        
+
+    
     </style>
 </head>
 <body>
-    <h1>This site is Responsive</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae laudantium perspiciatis, voluptatibus fuga a dignissimos maxime? Asperiores repellat voluptate doloremque <br>soluta esse provident sed explicabo, est mollitia consequatur dolorem error.</p>
+
+<div class="loading-container" id="loading-container">
+    <div class="loading-spinner"></div>
+</div>
+
+<div class="content" id="content">
+    <div class="logo">
+        <img src="yummly.svg"  class="yummly">
+    </div>
+    <div class="heading">
+        <p class="pk">Your recipes are waiting<p>
+    </div>
+    <div class="mai">
+        <label class="label1" for="email">Email</label>
+       
+        <input type="email" class="email" placeholder="your@gmail.com" required>
+    </div>
+    <div class="pass">
+        <label class="label1" for="password">password</label>
+        <input type="password" class="password" id="password" placeholder="password" required value="">
+    </div>
+    <div class="checkbox">
+        Show Password<input class="check" type="checkbox" onclick="myFunction()">
+    </div>
+    <div class="submit">
+       <button class="signup" type="submit"><a href="">Sign Up</a></button>
+    </div>
+    <div class="paragraph">
+        <p class="p1">Connect to cutomize your recipie discovery.</p>
+    </div>
+    <div class="already">
+        <p class="lk">Already have an account? Log in here.</p>
+    </div>
+    <div class="buttonn">
+    <div class="one">
+        <div class="inner">
+           <img src="facebook11.webp" class="f1" alt="">
+           <p  class="ik">Connect With Facebook</p>
+        </div>
+    </div>
+    </div>
+    
+    <div class="buttonn">
+    <div class="two">
+        <div class="inner">
+           <img src="google.webp" class="f1" alt="">
+           <p  class="ik"><a href="https://accounts.google.com/v3/signin/confirmidentifier?authuser=0&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&ifkv=ATuJsjwKmXWSyjx-4_eX0dCbCYfIoiq8GNOn7D-vgE5HhCqq9bnhYkbCBKYsSCjA8x2t-7L__ud8&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S940168440%3A1709129682077733&theme=glif">Connect With Google</a></p>
+        </div>
+    </div>
+    </div>
+    <div class="buttonn">
+    <div class="three">
+        <div class="inner">
+           <img src="apple.webp" class="f1" alt="">
+           <p  class="ik">Connect With Apple</p>
+        </div>
+    </div>
+    </div>
+    <div class="buttonn">
+    <div class="four">
+        <div class="inner">
+           <img src="email.webp" class="f1" alt="">
+           <p  class="ik">Connect With Email</p>
+        </div>
+    </div>
+    </div>
+   
+    
+    
+   
+</div>
+
+<script>
+    // Simulate content loading (replace this with your actual loading logic)
+    setTimeout(function () {
+        document.getElementById('loading-container').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+    }, 3000); // Change 3000 to the time your content would take to load (in milliseconds)
+</script>
+<script>
+    function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+</script>
 
 </body>
 </html>
